@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[
+    top    = 0.5 in, 
+    bottom = 1 in,
+    left   = 0.5 in,
+    right  = 0.5 in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{fontspec}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[outline]{contour}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\graphicspath{ {./images/} } 
+\setmainfont{[Main-Regular.ttf]}[
+    BoldFont       = [Main-Bold.ttf] ,
+    ItalicFont     = [Main-Italic.ttf] ,
+    BoldItalicFont = [Main-BoldItalic.ttf] ]
+\newfontfamily\texthf{[Headers.ttf]}
+\definecolor{gray0}{gray}{0.9}
+\definecolor{gray1}{gray}{1}
+\definecolor{gray2}{gray}{0.95}
+\renewcommand{\arraystretch}{1.25}
+\contourlength{1pt}
+\contournumber{10}
+
+\titleformat*{\section}
+{\texthf\Huge}
+\titleformat*{\subsection}
+{\texthf\large}
+\titleformat*{\subsubsection}
+{\texthf\normalsizes}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\lfoot{Page \thepage\ of \pageref{Last Page}}
+\rfoot{\includegraphics[height = 0.5in]{images/Logo.png}}
+
+\begin{document}
+\begin{multicols}{2}
+
+\section*{\contour{black}{Class Name}}
+Class description. \\
+
+\hspace{-0.8cm}
+{\rowcolors{2}{gray1}{gray2}
+\begin{tabular}{ p{2.25cm} p{6.5cm} }
+\rowcolor{gray0}
+    \multicolumn{2}{c}{\textbf{Class Specs}} \\
+\hline
+    \textbf{Class Type:}   & None \\
+    \textbf{Max Armor:}    & None \\
+    \textbf{Requirements:} & None \\
+    \textbf{Locations:}    & None \\
+    \textbf{Notes:}        & None
+\end{tabular}
+} \\
+
+\Centering
+\includegraphics{images/Astengrad.jpg} \\
+
+\subsection*{\contour{black}{Rank 1 Abilities}}
+\vspace{-10pt}
+\hrule
+\vspace{2pt}
+
+\subsubsection*{\contour{black}{Ability 1} \hfill Rank 1}
+\vspace{-3pt}
+\textit{Modifiers, Delivery} \hfill \textit{Combat, Power} \vspace{5pt} \\
+\justifying{Ability description.}
+
+\subsubsection*{\contour{black}{Ability 2} \hfill Rank 1}
+\vspace{-3pt}
+\textit{Modifiers, Delivery} \hfill \textit{Combat, Power} \vspace{5pt} \\
+\justifying{Ability description.}
+
+\subsection*{\contour{black}{Rank 2 Abilities}}
+\vspace{-10pt}
+\hrule
+\vspace{2pt}
+
+\subsubsection*{\contour{black}{Ability 1} \hfill Rank 2}
+\vspace{-3pt}
+\textit{Modifiers, Delivery} \hfill \textit{Combat, Power} \vspace{5pt} \\
+\justifying{Ability description.}
+
+\subsubsection*{\contour{black}{Ability 2} \hfill Rank 2}
+\vspace{-3pt}
+\textit{Modifiers, Delivery} \hfill \textit{Combat, Power} \vspace{5pt} \\
+\justifying{Ability description.}
+
+\end{multicols}
+\end{document}
