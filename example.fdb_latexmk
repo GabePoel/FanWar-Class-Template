@@ -1,0 +1,11 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.xdv" "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.pdf" "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example" 0
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.pdf"
+["xelatex"] 0 "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.tex" "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.xdv" "example" 0
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.aux" 1618011645 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.tex" 0 -1 0 ""
+  (generated)
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.xdv"
+  "/home/gabriel/Documents/GitHub/FanWar-Class-Template/example.log"
