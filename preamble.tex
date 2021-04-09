@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[
-    top    = 0.5 in, 
+    top    = 0.5 in,
     bottom = 1.5 in,
     left   = 0.5 in,
     right  = 0.5 in,
@@ -19,16 +19,30 @@
 \usepackage{lastpage}
 \usepackage{etoolbox}
 \usepackage{arydshln}
+\usepackage[abspath]{currfile}
 
 \setlength{\dashlinedash}{.5pt}
 \setlength{\dashlinegap}{5pt}
 
-\graphicspath{ {./images/} } 
-\setmainfont{[Main-Regular.ttf]}[
-    BoldFont       = [Main-Bold.ttf] ,
-    ItalicFont     = [Main-Italic.ttf] ,
-    BoldItalicFont = [Main-BoldItalic.ttf] ]
-\newfontfamily\texthf{[Headers.ttf]}
+\graphicspath{ {./images/} }
+\setmainfont{Main}[
+    Path           = fonts/ ,
+    UprightFont    = *-Regular.ttf ,
+    BoldFont       = *-Bold.ttf ,
+    ItalicFont     = *-Italic.ttf ,
+    BoldItalicFont = *-BoldItalic.ttf
+]
+% \setmainfont[
+%     Path           = \currfileabsdir,
+%     UprightFont    = fonts/Main-Regular.ttf,
+%     BoldFont       = fonts/Main-Bold.ttf,
+%     ItalicFont     = fonts/Main-Italic.ttf,
+%     BoldItalicFont = fonts/Main-BoldItalic.ttf
+% ]{fonts}
+\newfontfamily{\texthf}{Headers}[
+    Path      = fonts/ ,
+    Extension = .ttf
+]
 \definecolor{gray0}{gray}{0.9}
 \definecolor{gray1}{gray}{1}
 \definecolor{gray2}{gray}{0.95}
@@ -53,38 +67,37 @@
 
 \newcounter{rank}[section]
 \newenvironment{newrank}[1]{\refstepcounter{rank}\subsection*{\color{gray3}{\contour{gray3}{Rank \therank \ Abilities}}}
-\vspace{-10pt}
-\hrule
-\vspace{2pt}
-#1}
+    \vspace{-10pt}
+    \hrule
+    \vspace{2pt}
+    #1}
 
 \newcommand\newclass[2]{\section*{\color{gray3}{\contour{gray3}{#1}}\setcounter{rank}{0}}\noindent#2 \\}
 
 \newcommand\newability[5][\hdashline]{\vbox{
-\subsubsection*{\color{gray3}{\contour{gray3}{#2} \hfill Rank \therank\vspace{-6 pt}}}
-\noindent
-\textit{#3} \hfill \textit{#4}\vspace{5 pt}\\
-\noindent\justifying{#5} \\ 
+        \subsubsection*{\color{gray3}{\contour{gray3}{#2} \hfill Rank \therank\vspace{-6 pt}}}
+        \noindent
+        \textit{#3} \hfill \textit{#4}\vspace{5 pt}\\
+        \noindent\justifying{#5} \\
 
-\vspace{-35 pt}
-\begin{tabular}{p{7.6cm}}
-\phantom{x} \\ #1
-\end{tabular}
-\vspace{-11 pt}
-}}
+        \vspace{-35 pt}
+        \begin{tabular}{p{7.6cm}}
+            \phantom{x} \\ #1
+        \end{tabular}
+        \vspace{-11 pt}
+    }}
 
 \newcommand\spectable[2][Specs]{\hspace{-0.8cm}
-{\rowcolors{2}{gray1}{gray2}
-\begin{center}
-    
-
-\begin{tabular}{ p{2.25cm} p{6cm} }
-\rowcolor{gray0}
-    \multicolumn{2}{c}{\textbf{#1}} \\
-\hline
-    #2
-\end{tabular}
-\end{center}} \\}
+    {\rowcolors{2}{gray1}{gray2}
+        \begin{center}
+            \begin{tabular}{ p{2.25cm} p{6cm} }
+                \rowcolor{gray0}
+                \multicolumn{2}{c}{\textbf{#1}} \\
+                \hline
+                #2
+            \end{tabular}
+        \end{center}}
+    \vspace{1em}}
 
 \newcommand\newimage[2][3]{\Centering
-\includegraphics[height = #1 in]{#2} \\}
+    \includegraphics[height = #1 in]{#2} \vspace{1em}}
