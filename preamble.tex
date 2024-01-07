@@ -65,22 +65,33 @@
     \vspace{2pt}
     #1}
 
-\newcommand\newclass[2]{\section*{\color{gray3}{\contour{gray3}{#1}}\setcounter{rank}{0}}\noindent#2 \\}
+% Defines a new section with a custom style
+% Use this at the start of the class
+\newcommand\newclass[2]{
+    \section*{\color{gray3}{\contour{gray3}{#1}}\setcounter{rank}{0}}
+    \noindent#2 \\
+}
 
-\newcommand\newability[5][\hdashline]{\vbox{
+% Defines a new subsubsection with a custom style
+% Use this for abilities
+\newcommand\newability[5][\hdashline]{
+    \vbox{
         \subsubsection*{\color{gray3}{\contour{gray3}{#2} \hfill Rank \therank\vspace{-6 pt}}}
         \noindent
         \textit{#3} \hfill \textit{#4}\vspace{5 pt}\\
         \noindent\justifying{#5} \\
-
         \vspace{-35 pt}
         \begin{tabular}{p{7.6cm}}
             \phantom{x} \\ #1
         \end{tabular}
         \vspace{-11 pt}
-    }}
+    }
+}
 
-\newcommand\spectable[2][Specs]{\hspace{-0.8cm}
+% Defines a new table with a custom style
+% Use this for class restrictions, prerequisites, etc.
+\newcommand\spectable[2][Specs]{
+    \hspace{-0.8cm}
     {\rowcolors{2}{gray1}{gray2}
         \begin{center}
             \begin{tabular}{ p{2.25cm} p{6cm} }
@@ -90,7 +101,12 @@
                 #2
             \end{tabular}
         \end{center}}
-    \vspace{1em}}
+    \vspace{1em}
+}
 
-\newcommand\newimage[2][3]{\Centering
-    \includegraphics[height = #1 in]{#2} \vspace{1em}}
+% Defines a new command for including images with a custom style
+% Use this for the class' art
+\newcommand\newimage[2][3]{
+    \Centering
+    \includegraphics[height = #1 in]{#2} \vspace{1em}
+}
